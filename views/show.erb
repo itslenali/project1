@@ -2,7 +2,9 @@
         the student you selected is: <br />
         
         <ul> 
-        <li> <%= @one_student[0][1] %> | <%= @one_student[0][2] %> | <%= @one_student[0][3] %> | <%= @one_student[0][4] %> | <%= @one_student[0][5] %> | <%= @one_student[0][6] %></li></ul>
+        <li> <%= @one_student[0][1] %> | <%= @one_student[0][2] %> | <%= @one_student[0][3] %> | <%= @one_student[0][4] %> | <%= @one_student[0][5] %> | <%= @one_student[0][6] %></li> </a> <a href="/Students/<%= @one_student[0][0] %>/edit" class='btn btn-primary'>Edit</a> | <a href = "/Students/<%= @one_student[0][0] %>/delete" class='btn btn-danger'>Delete</a></li>
+        
+        </ul>
         
         
 </p>
