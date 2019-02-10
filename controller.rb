@@ -38,7 +38,8 @@ end
 post '/Students' do
   #  students << params[:newstudent]
     db = DBHandler.new
-    db.create(params[:newstudent])
+    db.create(params[:lastname_new], params[:firstname_new], params[:major_new], params[:email_new], params[:classyr_new], params[:graduated_new])
+    @all_students = db.all
     redirect to '/Students'
 end
 
@@ -53,10 +54,10 @@ get '/Students/:id/edit' do
 end
   
 #update AFTER EDIT TO GET THE NEW DISPLAY   
-patch '/Students/:id' do
+post '/Students/:id' do
     id = params[:id].to_i
     db = DBHandler.new
-    db.update(id, params[:newstudent])
+    db.update(id, params[:lastname_new], params[:firstname_new], params[:major_new], params[:email_new], params[:classyr_new], params[:graduated_new])
     redirect '/Students'
 end
 

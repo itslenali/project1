@@ -47,7 +47,7 @@ class DBHandler
                                   '#{firstname_val}',
                                    '#{major_val}',
                                    '#{email_val}',
-                                   '#{classyr_val}'
+                                   '#{classyr_val}',
                                    '#{graduated_val}');"
             db.execute dbstatement
         
@@ -120,7 +120,7 @@ class DBHandler
     def getStudent(sid) #see one student based on ID
         begin
             db = SQLite3::Database.open "students.db"
-            dbstatement = "SELECT firstname, lastname
+            dbstatement = "SELECT *
                             FROM Students
                             WHERE sid = '#{sid}';"
             db.execute dbstatement
@@ -133,12 +133,17 @@ class DBHandler
             db.close if db 
         end
     end
-    
-    def update(sid, column, new_val)
+
+    def update(sid, lastname_new, firstname_new, major_new, email_new, classyr_new, graduated_new)
         begin
             db = SQLite3::Database.open "students.db"
             dbstatement = "UPDATE  Students
-                              SET  #{column} = '#{new_val}'
+                              SET  lastname = '#{lastname_new}',
+                                   firstname = '#{firstname_new}',
+                                   major = '#{major_new}',
+                                   email = '#{email_new}',
+                                   class_yr = '#{classyr_new}',
+                                   graduated = '#{graduated_new}'
                             WHERE  sid = '#{sid}';"
             db.execute dbstatement
             

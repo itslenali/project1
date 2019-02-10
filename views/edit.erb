@@ -1,32 +1,78 @@
 <form class="form-horizontal" action = 'https://newjersey-lenali.c9users.io/Students/<%=@one_student[0][0]%>' method=post>
 
-<input type = "hidden" name='_method' value='patch'> #hiddenform fieldset
-
+<form class="form-horizontal">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Edit Students</legend>
+<legend>Form Name</legend>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="newstudent">Student name:</label>  
+  <label class="col-md-4 control-label" for="firstname_new">First Name</label>  
   <div class="col-md-4">
-  <input id="newstudent" name="newstudent" type="text" 
-                                                      value="<%= @one_student[0][1] %>"
-                                                                                class="form-control input-md">
-  <span class="help-block">help</span>  
+  <input id="firstname_new" name="firstname_new" type="text" placeholder="" value="<%= @one_student[0][2] %>"class="form-control input-md" required="">
+    
   </div>
 </div>
 
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="lastname_new">Last Name</label>  
+  <div class="col-md-4">
+  <input id="lastname_new" name="lastname_new" type="text" placeholder="" value="<%= @one_student[0][1] %>"class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="major_new">Major</label>  
+  <div class="col-md-4">
+  <input id="major_new" name="major_new" type="text" placeholder="" value="<%= @one_student[0][3] %>"class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="email_new">Email</label>  
+  <div class="col-md-4">
+  <input id="email_new" name="email_new" type="text" placeholder="" value="<%= @one_student[0][4] %>"class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="classyr_new">Class Year</label>  
+  <div class="col-md-4">
+  <input id="classyr_new" name="classyr_new" type="text" placeholder=""value="<%= @one_student[0][5] %>" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="graduated_new">Graduated? (Yes = 1 | No = 0)</label>  
+  <div class="col-md-4">
+  <input id="graduated_new" name="graduated_new" type="text" placeholder=""value="<%= @one_student[0][6] %>" class="form-control input-md">
+    
+  </div>
+</div>
 
 <!-- Button -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="singlebutton">submit</label>
+  <label class="col-md-4 control-label" for="submit"></label>
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">submit</button>
+    <button id="submit" name="submit" class="btn btn-primary">Submit</button>
   </div>
 </div>
 
 </fieldset>
 </form>
+
+
+
+
+
 
