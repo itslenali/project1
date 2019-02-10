@@ -1,7 +1,7 @@
 require 'sqlite3'
 
 #TABLE OF CONTENTS:
-    # 1) CREATE A NEW RECORD: create(sid_val,
+    # 1) CREATE A NEW RECORD: create(
                                # lastname_val,
                                # firstname_val,
                                # major_val,
@@ -22,8 +22,8 @@ class DBHandler
                                                                lastname   TEXT,
                                                                firstname  TEXT,
                                                                major      TEXT,
-                                                               email      TEXT
-                                                               class_yr   TEXT
+                                                               email      TEXT,
+                                                               class_yr   TEXT,
                                                                graduated  INTEGER);"
                                                                #graduated = 1
                                                                #current student = 0
@@ -38,11 +38,11 @@ class DBHandler
         end
     end
     
-    def create(sid_val, lastname_val, firstname_val, major_val, email_val, classyr_val, graduated_val)
+    def create(lastname_val, firstname_val, major_val, email_val, classyr_val, graduated_val)
         begin
             db = SQLite3::Database.open "students.db"
-            dbstatement = "INSERT INTO Students(sid, lastname, firstname, major, email, class_yr, graduated_val)
-                           VALUES('#{sid_val}',
+            dbstatement = "INSERT INTO Students(lastname, firstname, major, email, class_yr, graduated)
+                           VALUES(
                                   '#{lastname_val}',
                                   '#{firstname_val}',
                                    '#{major_val}',

@@ -1,0 +1,32 @@
+<form class="form-horizontal" action = 'https://newjersey-lenali.c9users.io/Students/<%=@one_student[0][0]%>' method=post>
+
+<input type = "hidden" name='_method' value='patch'> #hiddenform fieldset
+
+<fieldset>
+
+<!-- Form Name -->
+<legend>Edit Students</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="newstudent">Student name:</label>  
+  <div class="col-md-4">
+  <input id="newstudent" name="newstudent" type="text" 
+                                                      value="<%= @one_student[0][1] %>"
+                                                                                class="form-control input-md">
+  <span class="help-block">help</span>  
+  </div>
+</div>
+
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton">submit</label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">submit</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
