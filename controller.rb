@@ -7,6 +7,7 @@ get '/' do #root directory
 end
 
 
+#index
 get '/Students' do 
     db = DBHandler.new
     @all_students = db.all #instance variable passes to view
@@ -20,17 +21,6 @@ end
 get '/Students/new' do
     erb :application do
         erb :new
-    end
-end
-
-#show
-get '/Students/:id' do
-    sid = params[:id].to_i
-    db = DBHandler.new
-    @one_student = db.getStudent(sid)
-   # @one_student = students[params[:id].to_i]
-    erb :application do
-        erb :show
     end
 end
 
@@ -69,4 +59,31 @@ get '/Students/:id/delete' do
     db.destroy(id)
     redirect '/Students'
     
+end
+
+get '/Students/graduated' do
+    db = DBHandler.new
+    @all_students = db.getStudents(1)
+    erb :application do
+        erb :index
+    end
+end
+
+get '/Students/current' do
+    db = DBHandler.new
+    @all_students = db.getStudents(0)
+    erb :application do
+        erb :index
+    end
+end
+
+#show
+get '/Students/:id' do
+    sid = params[:id].to_i
+    db = DBHandler.new
+    @one_student = db.getStudent(sid)
+   # @one_student = students[params[:id].to_i]
+    erb :application do
+        erb :show
+    end
 end
