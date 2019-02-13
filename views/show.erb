@@ -1,10 +1,52 @@
-<p>
-        the student you selected is: <br />
-        
-        <ul> 
-        <li> <%= @one_student[0][1] %> | <%= @one_student[0][2] %> | <%= @one_student[0][3] %> | <%= @one_student[0][4] %> | <%= @one_student[0][5] %> | <%= @one_student[0][6] %></li> </a> <a href="/Students/<%= @one_student[0][0] %>/edit" class='btn btn-primary'>Edit</a> | <a href = "/Students/<%= @one_student[0][0] %>/delete" class='btn btn-danger'>Delete</a></li>
-        
-        </ul>
-        
-        
+<form class="form-horizontal" action = 'https://newjersey-lenali.c9users.io/Students/<%=@one_student[0][0]%>' method=get>
+
+<p> <br/>
+  
+ 
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <h2>Students</h2>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Major</th>
+        <th>Class Year</th>
+        <th>Status</th>
+        <th>Edit</th>
+        <th>Delete</th>
+         <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%=@one_student[0][2]%></td>
+        <td><%=@one_student[0][1]%></td>
+        <td><%=@one_student[0][4]%></td>
+        <td><%=@one_student[0][3]%></td>
+        <td><%=@one_student[0][5]%></td>
+        <td><%=@one_student[0][6]%></td>
+        <td><a href="/Students/<%= @one_student[0][0] %>/edit" class='btn btn-primary'>Edit</a></td>
+        <td><a href = "/Students/<%=@one_student[0][0] %>/delete" class='btn btn-info'>Delete</a></li></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+</body>
+</html>
+
+    
 </p>

@@ -48,7 +48,7 @@ post '/Students/:id' do
     id = params[:id].to_i
     db = DBHandler.new
     db.update(id, params[:lastname_new], params[:firstname_new], params[:major_new], params[:email_new], params[:classyr_new], params[:graduated_new])
-    redirect '/Students'
+    redirect '/Students/id'
 end
 
 #delete
@@ -69,7 +69,7 @@ get '/Students/graduated' do
     end
 end
 
-get '/Students/current' do
+get '/Students/show' do
     db = DBHandler.new
     @all_students = db.getStudents(0)
     erb :application do

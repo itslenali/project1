@@ -25,8 +25,7 @@ class DBHandler
                                                                email      TEXT,
                                                                class_yr   TEXT,
                                                                graduated  INTEGER);"
-                                                               #graduated = 1
-                                                               #current student = 0
+                                                               
             db.execute dbstatement
         
         rescue SQLite3::Exception => e
@@ -79,7 +78,7 @@ class DBHandler
     def getStudent(sid) #see one student based on ID
         begin
             db = SQLite3::Database.open "students.db"
-            dbstatement = "SELECT firstname, lastname
+            dbstatement = "SELECT *
                             FROM Students
                             WHERE sid = '#{sid}';"
             db.execute dbstatement
@@ -99,12 +98,12 @@ class DBHandler
             if binary == 0                              #get current student
                 dbstatement = "SELECT *
                                 FROM Students 
-                                WHERE graduated = 0;"
+                                WHERE graduated = '0';"
                 db.execute dbstatement
             else                                        #get graduated students
                 dbstatement = "SELECT *
                                 FROM Students 
-                                WHERE graduated = 1;"
+                                WHERE graduated = '1';"
                 db.execute dbstatement
             end
        

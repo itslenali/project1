@@ -4,7 +4,7 @@
 <fieldset>
 
 <!-- Form Name -->
-<legend>Form Name</legend>
+<legend></legend>
 
 <!-- Text input-->
 <div class="form-group">
@@ -24,14 +24,26 @@
   </div>
 </div>
 
-<!-- Text input-->
+<form class="form-horizontal">
+<fieldset>
+
+
+<!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="major_new">Major</label>  
+  <label class="col-md-4 control-label" for="Choose Option">Major</label>
   <div class="col-md-4">
-  <input id="major_new" name="major_new" type="text" placeholder="" class="form-control input-md" required="">
-    
+    <select id="Choose Option" name="Choose Option" class="form-control">
+      <option value="Biological Sciences">Biological Sciences</option>
+      <option value="Business Administration">Business Administration</option>
+      <option value="Computational Biology">Computational Biology</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="Information Systems">Information Systems</option>
+    </select>
   </div>
 </div>
+
+</fieldset>
+</form>
 
 <!-- Text input-->
 <div class="form-group">
@@ -51,14 +63,23 @@
   </div>
 </div>
 
-<!-- Text input-->
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Select Multiple -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="graduated_new">Graduated? (Yes = 1 | No = 0)</label>  
+  <label class="col-md-2 control-label" for="selectmultiple">Graduated?</label>
   <div class="col-md-4">
-  <input id="graduated_new" name="graduated_new" type="text" placeholder="" class="form-control input-md">
-    
+    <select id="selectmultiple" name="selectmultiple" class="form-control" multiple="multiple">
+      <option value="0">Yes</option>
+      <option value="1">No</option>
+    </select>
   </div>
 </div>
+
+</fieldset>
+</form>
+
 
 <!-- Button -->
 <div class="form-group">
