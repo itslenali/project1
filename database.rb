@@ -24,7 +24,7 @@ class DBHandler
                                                                major      TEXT,
                                                                email      TEXT,
                                                                class_yr   TEXT,
-                                                               graduated  INTEGER);"
+                                                               graduated  TEXT);"
                                                                
             db.execute dbstatement
         
@@ -63,7 +63,8 @@ class DBHandler
         begin
             db = SQLite3::Database.open "students.db"
             dbstatement = "SELECT  *
-                             FROM  Students;"
+                             FROM  Students
+                             ORDER BY firstname, lastname, major;"
             db.execute dbstatement
         
         rescue SQLite3::Exception => e
@@ -75,38 +76,22 @@ class DBHandler
         end
     end
     
-    def getStudent(sid) #see one student based on ID
-        begin
-            db = SQLite3::Database.open "students.db"
-            dbstatement = "SELECT *
-                            FROM Students
-                            WHERE sid = '#{sid}';"
-            db.execute dbstatement
-            
-        rescue SQLite3::Exception => e
-            puts "Exception OCCURRED"
-            puts e
-
-        ensure
-            db.close if db 
-        end
-    end
     
     def getStudents(binary) #gets all students who either graduated or didnt
         begin
             db = SQLite3::Database.open "students.db"
-            if binary == 0                              #get current student
+            if binary == 0   #get current student
                 dbstatement = "SELECT *
                                 FROM Students 
-                                WHERE graduated = '0';"
-                db.execute dbstatement
-            else                                        #get graduated students
+                                WHERE graduated = 'No'
+                                ORDER BY firstname, lastname, major;"
+            elsif binary == 1                                     #get graduated students
                 dbstatement = "SELECT *
                                 FROM Students 
-                                WHERE graduated = '1';"
-                db.execute dbstatement
+                                WHERE graduated = 'Yes'
+                                ORDER BY firstname, lastname, major;"
             end
-       
+            db.execute dbstatement
         rescue SQLite3::Exception => e
             puts "Exception OCCURRED"
             puts e

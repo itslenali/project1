@@ -24,15 +24,14 @@
         <th>Email</th>
         <th>Major</th>
         <th>Class Year</th>
-        <th>Status</th>
+        <th>Graduated</th>
         <th>Edit</th>
         <th>Delete</th>
         <th>Select</th>
         <th></th>
       </tr>
     </thead>
-    <% 
-    @all_students.each do |id, lastname, firstname, major, email, classyr, graduated| %>
+    <% @all_students.each do |id, lastname, firstname, major, email, classyr, graduated| %>
 
     <a href="/Students/<%= id %>">
     <tbody>

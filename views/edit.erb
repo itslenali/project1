@@ -51,20 +51,26 @@
   </div>
 </div>
 
-<!-- Text input-->
+<!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="graduated_new">Graduated? (Yes = 1 | No = 0)</label>  
+  <label class="col-md-4 control-label" for="graduated_new" name="graduated_new">Graduation</label>
   <div class="col-md-4">
-  <input id="graduated_new" name="graduated_new" type="text" placeholder=""value="<%= @one_student[0][6] %>" class="form-control input-md">
-    
+    <select id="graduated_new" name="graduated_new" class="form-control">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+ 
+    </select>
   </div>
 </div>
 
+</fieldset>
+
+
 <!-- Button -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="submit"></label>
+  <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="submit" name="submit" class="btn btn-primary">Submit</button>
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
   </div>
 </div>
 

@@ -6,7 +6,6 @@ get '/' do #root directory
     redirect '/Students'
 end
 
-
 #index
 get '/Students' do 
     db = DBHandler.new
@@ -27,6 +26,7 @@ end
 #create
 post '/Students' do
   #  students << params[:newstudent]
+    puts "The value is: #{params[:graduated_new]}"
     db = DBHandler.new
     db.create(params[:lastname_new], params[:firstname_new], params[:major_new], params[:email_new], params[:classyr_new], params[:graduated_new])
     @all_students = db.all
@@ -48,7 +48,7 @@ post '/Students/:id' do
     id = params[:id].to_i
     db = DBHandler.new
     db.update(id, params[:lastname_new], params[:firstname_new], params[:major_new], params[:email_new], params[:classyr_new], params[:graduated_new])
-    redirect '/Students/id'
+    redirect '/Students'
 end
 
 #delete
@@ -61,6 +61,14 @@ get '/Students/:id/delete' do
     
 end
 
+get '/Students/current' do
+    db = DBHandler.new
+    @all_students = db.getStudents(0)
+    erb :application do
+        erb :index
+    end
+end
+
 get '/Students/graduated' do
     db = DBHandler.new
     @all_students = db.getStudents(1)
@@ -69,20 +77,12 @@ get '/Students/graduated' do
     end
 end
 
-get '/Students/show' do
-    db = DBHandler.new
-    @all_students = db.getStudents(0)
-    erb :application do
-        erb :index
-    end
-end
 
 #show
 get '/Students/:id' do
     sid = params[:id].to_i
     db = DBHandler.new
     @one_student = db.getStudent(sid)
-   # @one_student = students[params[:id].to_i]
     erb :application do
         erb :show
     end
