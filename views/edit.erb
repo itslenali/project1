@@ -1,14 +1,23 @@
 <form class="form-horizontal" action = 'https://newjersey-lenali.c9users.io/Students/<%=@one_student[0][0]%>' method=post>
 
-<form class="form-horizontal">
+<form class="form-horizontal" style="font-family:georgia, garamond,serif;">
 <fieldset>
 
+<html lang="en">
+
+<style>
+nav ul {
+  border-left: double;
+  border-color: #EBD9DB;
+}
+
+</style>
 <!-- Edit Student -->
-<legend>Edit Student</legend>
+<legend style="font-family:Verdana;">Edit Student</legend>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="firstname_new">First Name</label>  
+  <label class="col-md-4 control-label" style="font-family:georgia, garamond,serif;" for="firstname_new">First Name</label>  
   <div class="col-md-4">
   <input id="firstname_new" name="firstname_new" type="text" placeholder="" value="<%= @one_student[0][2] %>"class="form-control input-md" required="">
     
@@ -17,7 +26,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="lastname_new">Last Name</label>  
+  <label class="col-md-4 control-label" style="font-family:georgia, garamond,serif;" for="lastname_new">Last Name</label>  
   <div class="col-md-4">
   <input id="lastname_new" name="lastname_new" type="text" placeholder="" value="<%= @one_student[0][1] %>"class="form-control input-md" required="">
     
@@ -26,7 +35,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="major_new">Major</label>  
+  <label class="col-md-4 control-label" style="font-family:georgia, garamond,serif;" for="major_new">Major</label>  
   <div class="col-md-4">
   <input id="major_new" name="major_new" type="text" placeholder="" value="<%= @one_student[0][3] %>"class="form-control input-md" required="">
     
@@ -35,7 +44,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="email_new">Email</label>  
+  <label class="col-md-4 control-label" style="font-family:georgia, garamond,serif;"for="email_new">Email</label>  
   <div class="col-md-4">
   <input id="email_new" name="email_new" type="text" placeholder="" value="<%= @one_student[0][4] %>"class="form-control input-md" required="">
     
@@ -44,7 +53,7 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="classyr_new">Class Year</label>  
+  <label class="col-md-4 control-label" style="font-family:georgia, garamond,serif;" for="classyr_new">Class Year</label>  
   <div class="col-md-4">
   <input id="classyr_new" name="classyr_new" type="text" placeholder=""value="<%= @one_student[0][5] %>" class="form-control input-md" required="">
     
@@ -53,7 +62,7 @@
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="graduated_new" name="graduated_new">Graduation</label>
+  <label class="col-md-4 control-label" style="font-family:georgia, garamond,serif;" for="graduated_new" name="graduated_new">Graduation</label>
   <div class="col-md-4">
     <select id="graduated_new" name="graduated_new" class="form-control">
       <option value="Yes">Yes</option>
@@ -70,13 +79,14 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+    <button id="singlebutton" name="singlebutton" class="btn btn-danger" >Submit</button>
   </div>
 </div>
 
 </fieldset>
 </form>
 
+</html>
 
 
 

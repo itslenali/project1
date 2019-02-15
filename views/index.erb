@@ -1,22 +1,43 @@
-
-
-
-<p> <br/>
+<p> 
   
- 
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
+  
+  <title></title>
+  <meta charset="utf-15">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
-<body>
 
-  <h2>Students</h2>
-  <table class="table table-hover">
+<style>
+
+div {
+  border-left: 3px double;
+  border-color: #EBD9DB;
+}{
+  
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #EBD9DB;
+}
+.table {
+  table-layout: auto;
+  width: 1180px; 
+}
+
+</style>
+</head>
+<body>
+  
+  <h3 style="font-family:verdana;">Students</h3>
+  <p style = "font-family:georgia,garamond,serif;font-size:13px;">
+    Listed in alphabetical order.
+    </p><br/>
+
+  <table class="table table-hover" style="font-family:georgia, garamond,serif;">
+
     <thead>
       <tr>
         <th>First Name</th>
@@ -42,9 +63,9 @@
         <td><%=major%></td>
         <td><%=classyr%></td>
         <td><%=graduated%></td>
-        <td><a href="/Students/<%= id %>/edit" class='btn btn-primary'>Edit</a></td>
-        <td><a href = "/Students/<%= id %>/delete" class='btn btn-info'>Delete</a></li></td>
-        <td><a href = "/Students/<%= id %>" class='btn btn-danger'>Select</a></li></td>
+        <td><a href="/Students/<%= id %>/edit" class='btn btn-default'>Edit</a></td>
+        <td><a href = "/Students/<%= id %>/delete" class='btn btn-default'>Delete</a></li></td>
+        <td><a href = "/Students/<%= id %>" class='btn btn-default'>Select</a></li></td>
         <% end %>
       </tr>
       

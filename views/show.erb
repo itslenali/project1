@@ -5,7 +5,7 @@
  
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -13,33 +13,55 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+    
+<style>
 
-  <h2>Students</h2>
-  <table class="table table-hover">
+div {
+  border-left: double;
+  border-color: #EBD9DB;
+}{
+  
+}
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #EBD9DB;
+}
+.table {
+  table-layout: auto;
+  width: 930px; 
+}
+
+</style>
+  <h2 style="font-family:verdana;">Student:  </h2>
+  <h3 style="font-family:verdana;font-style:italic;">
+  <td><%=@one_student[0][2]%></td>
+  <td><%=@one_student[0][1]%></td>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+ <td><a href="/Students/<%= @one_student[0][0] %>/edit" class='btn btn-default'>Edit</a></td>
+ <td><a href = "/Students/<%=@one_student[0][0] %>/delete" class='btn btn-default'>Delete</a></li></td>
+   </h3>
+   </br>
+  <table class="table table-hover" style="font-family:georgia, garamond,serif;">
     <thead>
       <tr>
-        <th>First Name</th>
+        <th >First Name</th>
         <th>Last Name</th>
         <th>Email</th>
         <th>Major</th>
         <th>Class Year</th>
-        <th>Status</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th>Graduated</th>
          <th></th>
       </tr>
     </thead>
 
-    <tbody>
+    <tbody style="font-family:georgia, garamond,serif;">
       <tr>
-        <td><%=@one_student[0][2]%></td>
+        <td ><%=@one_student[0][2]%></td>
         <td><%=@one_student[0][1]%></td>
         <td><%=@one_student[0][4]%></td>
         <td><%=@one_student[0][3]%></td>
         <td><%=@one_student[0][5]%></td>
         <td><%=@one_student[0][6]%></td>
-        <td><a href="/Students/<%= @one_student[0][0] %>/edit" class='btn btn-primary'>Edit</a></td>
-        <td><a href = "/Students/<%=@one_student[0][0] %>/delete" class='btn btn-info'>Delete</a></li></td>
+        
       </tr>
       
     </tbody>
@@ -50,3 +72,4 @@
 
     
 </p>
+
